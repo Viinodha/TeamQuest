@@ -51,4 +51,4 @@ Students from other colleges can also find people from RMK, RMD, or RMKCET for:
 
 ##  Final words
 Built for Codedex monthly challenge September'26 !
-happie questingg :3 🎮💚
+happie questingg :3 
