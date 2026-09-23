@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAMQUEST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-logos">
+    <img src="logos/rmk.png" alt="RMK logo">
+    <img src="logos/rmd.png" alt="RMD logo">
+    <img src="logos/rmkcet.png" alt="RMKCET logo">
+  </div>
+  <h1 class="logo pixel-font">TEAMQUEST</h1>
+  <p class="tagline">find your crew. build your team. start the quest.</p>
+</header>
+
+<main>
+  <div class="toolbar">
+    <select id="filterCollege">
+      <option value="all">All colleges</option>
+      <option value="RMK">RMK</option>
+      <option value="RMD">RMD</option>
+      <option value="RMKCET">RMKCET</option>
+      <option value="Other">Other</option>
+    </select>
+    <input type="text" id="filterSkill" placeholder="filter by skill...">
+    <select id="filterCategory">
+      <option value="all">All players</option>
+      <option value="technical">Technical</option>
+      <option value="nontechnical">Non-technical</option>
+    </select>
+    <div class="add-btn-wrap">
+      <button class="btn btn-green" id="openAddBtn">+ Join the roster</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty-state" id="emptyState" style="display:none;">no players match this search yet.</div>
+</main>
+
+<div class="overlay" id="overlay">
+  <div class="modal pixel-cut">
+    <h2>New player</h2>
+    <form id="addForm">
+
+      <div class="field">
+        <label>Pick your avatar</label>
+        <div class="avatar-picker" id="avatarPicker"></div>
+      </div>
+
+      <div class="field">
+        <label for="fName">Name</label>
+        <input type="text" id="fName" required>
+      </div>
+      <div class="field">
+        <label for="fCollege">College</label>
+        <select id="fCollege" required>
+          <option value="RMK">RMK</option>
+          <option value="RMD">RMD</option>
+          <option value="RMKCET">RMKCET</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="field" id="fCollegeOtherWrap" style="display:none;">
+        <label for="fCollegeOther">Enter your college name</label>
+        <input type="text" id="fCollegeOther" placeholder="e.g. Anna University">
+      </div>
+      <div class="field">
+        <label for="fYearSection">Year & section</label>
+        <input type="text" id="fYearSection" placeholder="e.g. 2nd yr, IT-B" required>
+      </div>
+      <div class="field">
+        <label for="fSkills">Technical skills (comma separated)</label>
+        <input type="text" id="fSkills" placeholder="React, Figma, ML">
+      </div>
+      <div class="field">
+        <label for="fNonTechSkills">Non-technical / hobbies (comma separated)</label>
+        <input type="text" id="fNonTechSkills" placeholder="Dance, Public speaking, Editing">
+      </div>
+      <div class="field">
+        <label for="fLookingFor">Looking for (comma separated)</label>
+        <input type="text" id="fLookingFor" placeholder="Backend dev, UI/UX, Pitch deck help">
+      </div>
+      <div class="field">
+        <label for="fProjects">Past projects (comma separated)</label>
+        <input type="text" id="fProjects" placeholder="Campus event app, ML mini-project">
+      </div>
+      <div class="field">
+        <label for="fContact">Contact (email or handle)</label>
+        <input type="text" id="fContact" required>
+      </div>
+      <div class="field">
+        <label for="fSocials">Socials (optional)</label>
+        <input type="text" id="fSocials" placeholder="instagram: @handle">
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-green">Add to roster</button>
+        <button type="button" class="btn btn-red" id="cancelAddBtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
